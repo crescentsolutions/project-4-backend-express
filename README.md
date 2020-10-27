@@ -4,6 +4,12 @@
 
 This app is a server that houses a MongoDB for Customer Profiles. Users will use the Client App to input their profile data and the data is stored here for future use.
 
+## Wireframe
+![Project 4 Wireframe](https://media.git.generalassemb.ly/user/30423/files/4c9ad880-17e8-11eb-9dc6-7e8212efd24a)
+
+## ERD
+![project 4 ERD v2](https://media.git.generalassemb.ly/user/30423/files/57ef0380-17ea-11eb-8f68-32a42da9416c)
+
 ## User Stories
 
 - As a User I want a form so that I can sign up [POST]
