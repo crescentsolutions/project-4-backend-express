@@ -18,3 +18,5 @@ curl "${API}${URL_PATH}" \
     }
   }'
 echo
+
+# TOKEN="edba0a357223dc66d84ba36baf8fa1ee" COMPANY_NAME="a" FIRST_NAME="b" LAST_NAME="c" TELEPHONE="123" WEB_HOST="d" DOMAIN_NAME="e" sh curl-scripts/profiles/create.sh
