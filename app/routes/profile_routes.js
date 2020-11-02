@@ -76,19 +76,17 @@ router.patch('/profiles/:id', requireToken, removeBlanks, (req, res, next) => {
   // if the client attempts to change the `owner` property by including a new
   // owner, prevent that by deleting that key/value pair
   delete req.body.profile.owner
-  const id = req.params.id
-  const profileData = req.body.profile
-
-  CustomerProfile.findById(id)
+  // console.log('response is ', res.body)
+  CustomerProfile.findById(req.params.id)
     .then(handle404)
-    .then(profileData => {
-      requireOwnership(req, profileData)
-
-      // pass the result of Mongoose's `.update` to the next `.then`
-      return profileData
-    })
     .then(profile => {
-      profile.updateOne(profileData)
+      // pass the `req` object and the Mongoose record to `requireOwnership`
+      // it will throw an error if the current user isn't the owner
+      requireOwnership(req, profile)
+      // console.log('test', profile)
+      // pass the result of Mongoose's `.update` to the next `.then`
+      // console.log('UPDATE TARGET', req.body.profile)
+      return profile.updateOne(req.body.profile)
     })
     // if that succeeded, return 204 and no JSON
     .then(() => res.sendStatus(204))

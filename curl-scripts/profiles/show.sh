@@ -1,7 +1,7 @@
 API="http://localhost:4741"
 URL_PATH="/profiles"
-ID="5f978e43085ed3ec6c2ece48"
-TOKEN="78ecebe4522ab42f62585768d40d6090"
+ID="5f9ff4bda6848e44afe85514"
+TOKEN="f008188af3d0e0fb9cfe41822de5d5b7"
 
 curl "${API}${URL_PATH}/${ID}" \
   --include \
@@ -10,4 +10,4 @@ curl "${API}${URL_PATH}/${ID}" \
 
 echo
 
-# sh curl-scripts/profiles/index.sh
+# sh curl-scripts/profiles/show.sh
